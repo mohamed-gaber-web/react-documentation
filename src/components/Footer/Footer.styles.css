@@ -1,0 +1,30 @@
+#footer-copyright {
+    color: #999999;
+    background: #ffffff;
+}
+
+#footer-copyright {
+    padding: 20px 0;
+    font-size: 11px;
+    color: #999;
+    background: #fff;
+    overflow: hidden;
+}
+
+#footer-copyright span.left {
+    float: left;
+}
+
+#footer-copyright .to-top {
+    float: right;
+    font-size: 10px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #aaa;
+}
+
+#footer-copyright .to-top i {
+    font-size: 14px;
+    margin-left: 3px;
+}

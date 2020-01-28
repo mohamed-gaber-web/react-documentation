@@ -1,0 +1,40 @@
+:root{
+    --main-header-bg: #fff;
+    --main-header-color: #777;
+    --main-font-size: 16px;
+}
+
+header{
+    background-color: var(--main-header-bg);
+}
+
+header ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+header ul li{
+    display: inline-block;
+}
+
+.parent{
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar ul li, .social ul li {
+    margin: 15px 20px;
+}
+
+.navbar ul li a, .social ul li a{
+    color: var(--main-header-color);
+    font-size: var(--main-font-size);
+    font-weight: 400;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.navbar ul li a:hover{
+    color: brown;
+}
