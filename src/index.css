@@ -3,6 +3,9 @@
   --main_font_size: 16px;
   --main_font_color: #000;
   --container-width: 1300px;
+  --title-font-size: 40px;
+  --title-font-color: #000;
+  --title-space: 20px 0;
 }
 
 
@@ -23,5 +26,12 @@ body {
   margin: 0 auto;
   padding-left: 25px;
   padding-right: 25px;
+}
+
+.title{
+  font-size: var(--title-font-size);
+  color: var(--title-font-color);
+  font-weight: 600;
+  margin: var(--title-space);
 }
 
