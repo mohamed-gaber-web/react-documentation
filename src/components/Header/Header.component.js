@@ -1,10 +1,17 @@
-import React, { Component } from 'react';
+import React, { PureComponent  } from 'react';
 import './Header.styles.css';
 
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
-class Header extends Component { 
+class Header extends PureComponent  { 
 
+    // name = "ahmed"; error in react bad use
+    
+    newFunction = () => { 
+        const history = this.props;
+        // e.preventDefault();
+        console.log(history);
+    }
     render() { 
         return (
             <header>
@@ -20,11 +27,12 @@ class Header extends Component {
                     </div>
                     <div className="social">
                         <ul>
-                            <li><a href=""><i className="fa fa-facebook" aria-hidden="true"></i></a></li>
-                            <li><a href=""><i className="fa fa-twitter" aria-hidden="true"></i></a></li>
-                            <li><a href=""><i className="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                            <li><Link to=""><i className="fa fa-facebook" aria-hidden="true"></i></Link></li>
+                            <li><Link to=""><i className="fa fa-twitter" aria-hidden="true"></i></Link></li>
+                            <li><Link to=""><i className="fa fa-linkedin" aria-hidden="true"></i></Link></li>
                         </ul>
-                    </div>
+                        </div>
+                        <button onClick={this.newFunction}> Click </button>
                     </div>
                 </div>
             </header>
@@ -32,4 +40,4 @@ class Header extends Component {
     }
 }
 
-export default Header;
+export default withRouter(Header);
