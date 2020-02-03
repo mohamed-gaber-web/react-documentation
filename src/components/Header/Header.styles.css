@@ -38,3 +38,13 @@ header ul li{
 .navbar ul li a:hover{
     color: brown;
 }
+
+button{
+    background-color: transparent;
+    border: none;
+    color: var(--main-header-color);
+    font-size: var(--main-font-size);
+    font-weight: 400;
+    text-transform: uppercase;
+    cursor: pointer;
+}

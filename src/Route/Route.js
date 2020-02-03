@@ -6,6 +6,8 @@ import HomePage from '../pages/homePage/home.page';
 import AboutPage from '../pages/Aboutus/About.page';
 import ContactPage from '../pages/Contactus/Contact.page';
 import ServicesPage from '../pages/Services/Service.page';
+import FAQPAGE from '../pages/Faq/faq.page';
+
 
 export const RoutePage = () => { 
 
@@ -14,6 +16,7 @@ export const RoutePage = () => {
             <Route path="/" component={HomePage} exact />
             <Route path="/about" component={AboutPage} />
             <Route path="/services" component={ServicesPage} />
+            <Route path="/faq" component={FAQPAGE} />
             <Route path="/contact" component={ContactPage} />
         </Switch>
     );

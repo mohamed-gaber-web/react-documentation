@@ -1,0 +1,33 @@
+.demo-input{
+    background-color: #fff;
+    height: 34px;
+    width: 41%;
+    border: none;
+    border-radius: 6px;
+    border: 1px solid #e5e5e5;
+    margin: 15px 0;
+    padding: 3px 10px;
+}
+
+.demo-label{
+    display: block;
+}
+
+form{
+    margin: 50px 0;
+}
+
+.contact_button{
+    background-color: #bc3333;
+    padding: 10px 30px;
+    color: #fff;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.demo-form-feedback{
+    color: red;
+    text-align: left;
+    padding: 0 0 20px 0;
+    font-size: 14px;
+}
