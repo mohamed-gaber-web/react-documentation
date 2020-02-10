@@ -17,14 +17,13 @@
 
 #footer-copyright .to-top {
     float: right;
-    font-size: 10px;
+    font-size: 16px;
     text-transform: uppercase;
     font-weight: 700;
-    letter-spacing: 1px;
-    color: #aaa;
+    color: #f50057;
 }
 
 #footer-copyright .to-top i {
-    font-size: 14px;
+    font-size: 16px;
     margin-left: 3px;
 }

@@ -7,7 +7,7 @@ import AboutPage from '../pages/Aboutus/About.page';
 import ContactPage from '../pages/Contactus/Contact.page';
 import ServicesPage from '../pages/Services/Service.page';
 import FAQPAGE from '../pages/Faq/faq.page';
-
+import NotFoundPage from '../pages/404/404.page';
 
 export const RoutePage = () => { 
 
@@ -18,6 +18,7 @@ export const RoutePage = () => {
             <Route path="/services" component={ServicesPage} />
             <Route path="/faq" component={FAQPAGE} />
             <Route path="/contact" component={ContactPage} />
+            <Route path="*"> <NotFoundPage /> </Route>
         </Switch>
     );
 

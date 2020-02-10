@@ -41,7 +41,6 @@ box-shadow:0 5px 4px -4px rgba(190,190,190,.1);
     line-height: 23px;
 }
 
-
 .post__bottom {
     display: flex;
     justify-content: space-between;
@@ -63,3 +62,9 @@ box-shadow:0 5px 4px -4px rgba(190,190,190,.1);
     color: var(--font-color);
     margin: 10px 0;
 }
+
+.btn__block{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
