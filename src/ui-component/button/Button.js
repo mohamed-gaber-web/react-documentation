@@ -8,4 +8,3 @@ export const ButtonUI = (props) => {
         <Button variant="contained" color={props.color}> {props.children} </Button>
     );
 }
-

@@ -5,6 +5,11 @@ import { Link, withRouter } from 'react-router-dom';
 
 class Header extends PureComponent  { 
 
+    state = {
+        name: "mohamed",
+        isLogin: true
+    }
+
     // name = "ahmed"; error in react bad use
     
     goToExternalPage = (link) => { 
@@ -13,7 +18,14 @@ class Header extends PureComponent  {
         // history.go("https://stackoverflow.com/questions/42914666/react-router-external-link");
         window.location.href = link;
     }
+
+    updatedLoggedIn = () => { 
+        // this.state.isLogin = "true"; // this is bad
+        this.setState({isLogin: !this.state.isLogin})
+    }
     render() { 
+        const {isLoggedin, name} = this.state;
+
         return (
             <header>
                 <div className="container">
@@ -25,6 +37,11 @@ class Header extends PureComponent  {
                             <li> <Link to="/services"> Services </Link> </li>
                             <li> <Link to="/faq"> faq </Link> </li>
                             <li> <Link to="/contact"> Contact Us </Link> </li>
+                            <li>
+                                <Link to="/contact"> Username:
+                                    {this.state.isLogin ? name : "Not Login"}
+                                </Link>
+                            </li>
                         </ul>
                     </div>
                     <div className="social">
