@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import './Contact.styles.css';
 
 import { Formiz, useForm } from '@formiz/core';

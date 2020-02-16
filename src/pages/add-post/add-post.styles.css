@@ -1,0 +1,23 @@
+.form-group{
+    margin: 10px 0;
+}
+
+.form-group input, textarea{
+    width: 50%;
+    height: 37px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+}
+
+label{
+    display: block;
+    font-weight: 400;
+    padding-bottom: 5px;
+    text-transform: capitalize;
+    font-family: monospace;
+    font-size: 16px;
+}
+
+.text-height{
+    height: 150px;
+}

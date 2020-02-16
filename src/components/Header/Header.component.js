@@ -24,7 +24,7 @@ class Header extends PureComponent  {
         this.setState({isLogin: !this.state.isLogin})
     }
     render() { 
-        const {isLoggedin, name} = this.state;
+        const {name} = this.state;
 
         return (
             <header>
@@ -36,6 +36,7 @@ class Header extends PureComponent  {
                             <li> <Link to="/about"> About Us </Link> </li>
                             <li> <Link to="/services"> Services </Link> </li>
                             <li> <Link to="/faq"> faq </Link> </li>
+                            <li> <Link to="/add-post"> Add Post </Link> </li>
                             <li> <Link to="/contact"> Contact Us </Link> </li>
                             <li>
                                 <Link to="/contact"> Username:
