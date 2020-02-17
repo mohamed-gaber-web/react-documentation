@@ -1,14 +1,37 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import './add-post.styles.css';
-import { ButtonUI } from '../../ui-component/button/Button';
+import axios from "axios";
+// import { ButtonUI } from '../../ui-component/button/Button';
 
 class AddPost extends Component {
+    /*
+        COMPONENT LIFECYCLE
+        constructor => the first method run in app
+        render
+        componentDidMount used with http request
+    */
+    // constructor(props) { 
+    //     super(props)
+    //     console.log("construtor run");
+    // }
 
     state = {
         titleInput: "",
         contentInput: "",
         dateInput: "",
+        allPosts: [],
+        // message: "hello"
     }
+
+    componentDidMount = () => {  // used with http request 
+        axios.get("https://jsonplaceholder.typicode.com/posts").then(result => {
+            // console.log(result.data);
+            this.setState({ allPosts: result.data });
+        }).catch(error => {
+            console.log(error);           
+        });
+    }
+
     handleSubmit = (event) => { 
         event.preventDefault();
         let title = this.state.titleInput;
@@ -34,9 +57,23 @@ class AddPost extends Component {
         this.setState({[event.target.name]: event.target.value})
     }
 
+    // changeState = () => { 
+    //     this.setState({message: "hay!"})
+    // }
 
-    render() { 
+    // componentWillMount() 
+    // { 
+    //     console.log("componentWillMount()"); 
+    // }
 
+    // componentWillUpdate() 
+    // { 
+    //     console.log("componentWillUpdate()"); 
+    // } 
+
+    render() { // render() required method - and show result - second method run in app
+        // console.log("render run");
+        
         return (
             <div className="container">
                 <h1 className="title"> Add Post </h1>
@@ -45,6 +82,7 @@ class AddPost extends Component {
                         <label htmlFor="title"> Title </label>
                         <input
                             type="text"
+                            required
                             value={this.state.titleInput}
                             name="titleInput"
                             onChange={this.hanldeChange}
@@ -76,6 +114,20 @@ class AddPost extends Component {
                     {/* <ButtonUI color="secondary" className="post-button"> Add Post </ButtonUI> */}
                     <button> Add Post </button>
                     </form>
+                {/* <button onClick={this.changeState}> Change State </button>
+                <h1> {this.state.message} </h1> */}
+                
+                {
+                    this.state.allPosts.map(post => { 
+                        return (
+                            <div className="block-post" key={post.id}>
+                                <h3> {post.title} </h3>
+                                
+                            </div>
+                        );
+                    })
+                }
+
             </div>
         );
     }

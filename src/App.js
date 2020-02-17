@@ -11,7 +11,6 @@ import { RoutePage } from './Route/Route';
 
 class App extends React.Component { 
 
-
   render() { 
 
     return (
