@@ -36,3 +36,19 @@ label{
     font-size: 25px;
     text-transform: uppercase;
 }
+
+.add_post button {
+    background-color: #ccc;
+    padding: 16px;
+    color: #000;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.add_post button.remove {
+    background-color: #bc3333;
+    padding: 8px;
+    color: #f5f5f5;
+    font-weight: 600;
+    font-size: 12px;
+}

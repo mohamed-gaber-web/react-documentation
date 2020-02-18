@@ -18,7 +18,7 @@ class AddPost extends Component {
     state = {
         titleInput: "",
         contentInput: "",
-        dateInput: "",
+        // dateInput: "",
         allPosts: [],
         // message: "hello"
     }
@@ -35,10 +35,31 @@ class AddPost extends Component {
     handleSubmit = (event) => { 
         event.preventDefault();
         let title = this.state.titleInput;
-        let content = this.state.contentInput;
-        let date = this.state.dateInput;
-        // const props = this.props;
-        console.log("hello", title, content, date); 
+        let body = this.state.contentInput;
+        // let date = this.state.dateInput;
+        const newpost = {
+            userId: Math.random(),
+            title,
+            body,
+        }
+        axios.post("https://jsonplaceholder.typicode.com/posts", {newpost}).then(res => { 
+            this.state.allPosts.push(res.data);
+            console.log(this.state.allPosts)
+        }).catch(err => { 
+            console.log(err)
+        });
+        // window.location.reload();
+        // console.log(newpost); 
+    }
+
+    removePost = id => { 
+        axios.delete(`https://jsonplaceholder.typicode.com/posts/${id}`).then(res => { 
+            console.log(res.data);
+            
+        }).catch(err => { 
+            console.log(err);
+            
+        })
     }
     
     // handleChangeTitle = (event) => { 
@@ -75,7 +96,7 @@ class AddPost extends Component {
         // console.log("render run");
         
         return (
-            <div className="container">
+            <div className="container add_post">
                 <h1 className="title"> Add Post </h1>
                 <form onSubmit={this.handleSubmit}>
                     <div className="form-group">
@@ -88,7 +109,7 @@ class AddPost extends Component {
                             onChange={this.hanldeChange}
                         />
                     </div>
-
+{/* 
                     <div className="form-group">
                         <label htmlFor="date"> Date </label>
                         <input
@@ -98,7 +119,7 @@ class AddPost extends Component {
                             id="date"
                             onChange={this.hanldeChange}
                         />
-                    </div>
+                    </div> */}
 
                     <div className="form-group">
                         <label htmlFor="content"> content </label>
@@ -122,6 +143,7 @@ class AddPost extends Component {
                         return (
                             <div className="block-post" key={post.id}>
                                 <h3> {post.title} </h3>
+                                <button className="remove" onClick={() => this.removePost(post.id)}> REMOVE </button>
                                 
                             </div>
                         );
